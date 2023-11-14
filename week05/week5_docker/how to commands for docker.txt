@@ -1,5 +1,5 @@
 build docker from file
 sudo docker build -t mlzoomcampw5 .
 
-overrise entry point
+override entry point
 sudo docker run -it -p 9696:9696 mlzoomcampw5
