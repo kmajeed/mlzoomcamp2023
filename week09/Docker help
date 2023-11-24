@@ -1,0 +1,29 @@
+ 
+List docker images
+ sudo docker images -a
+list docker container
+  sudo docker ps -a
+ 
+ 
+ remove docker container
+  sudo docker rm c82abcc2569a
+ 
+ 
+ remove docker images
+ sudo docker rmi km_bees_vs_wasps_v1
+
+ run a docker in bash mode
+ sudo docker run -it --entrypoint sh km_bees_vs_wasps_v1:latest
+ 
+ run docker as script
+  sudo docker run -it --rm -p 8080:8080 km_bees_vs_wasps_v1:latest
+
+ build the docker images
+ 
+ sudo docker build -t km_bees_vs_wasps_v1 .
+
+ ************************************
+ 
+
+
+ 
