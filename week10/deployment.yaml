@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: credit
+spec:
+  selector:
+    matchLabels:
+      app: credit
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: credit
+    spec:
+      containers:
+      - name: credit
+        image: zoomcamp-model:hw10
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "100m"            
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9696
+
+# to run use the following command
+# kubectl apply -f deployment.yaml
+# kubectl get deployment
+# kubectl get pod

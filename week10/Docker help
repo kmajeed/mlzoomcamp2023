@@ -1,0 +1,52 @@
+ 
+List docker images
+ sudo docker images -a
+ or
+ sudo docker image ls
+ 
+list docker container
+  sudo docker ps -a
+ 
+ 
+ remove docker container
+  sudo docker rm c82abcc2569a
+ 
+ 
+ remove docker images
+ sudo docker rmi km_bees_vs_wasps_v1
+
+ run a docker in bash mode
+ sudo docker run -it --entrypoint sh km_bees_vs_wasps_v1:latest
+ 
+ run docker as script
+  sudo docker run -it --rm -p 8080:8080 km_bees_vs_wasps_v1:latest
+
+ build the docker images
+ 
+ sudo docker build -t km_bees_vs_wasps_v1 .
+
+ ************************************
+ Outputs
+ 
+ (base) majeedk@tosh:~/Documents/ml.zoom.camp/week09$ sudo docker build -t km_bees_vs_wasps_v1 .
+[+] Building 1.4s (9/9) FINISHED                                                                                                                                            docker:default
+ => [internal] load build definition from Dockerfile                                                                                                                                  0.0s
+ => => transferring dockerfile: 989B                                                                                                                                                  0.0s
+ => [internal] load .dockerignore                                                                                                                                                     0.0s
+ => => transferring context: 2B                                                                                                                                                       0.0s
+ => [internal] load metadata for docker.io/agrigorev/zoomcamp-bees-wasps:v2                                                                                                           1.3s
+ => [1/4] FROM docker.io/agrigorev/zoomcamp-bees-wasps:v2@sha256:823f8536a45968f40ee3daf8a2da030b914912a382a4611610b3b84d36d2924c                                                     0.0s
+ => => resolve docker.io/agrigorev/zoomcamp-bees-wasps:v2@sha256:823f8536a45968f40ee3daf8a2da030b914912a382a4611610b3b84d36d2924c                                                     0.0s
+ => [internal] load build context                                                                                                                                                     0.0s
+ => => transferring context: 3.01kB                                                                                                                                                   0.0s
+ => CACHED [2/4] RUN pip install pillow                                                                                                                                               0.0s
+ => CACHED [3/4] RUN pip install https://github.com/alexeygrigorev/tflite-aws-lambda/raw/main/tflite/tflite_runtime-2.14.0-cp310-cp310-linux_x86_64.whl?raw=true                      0.0s
+ => [4/4] COPY lambda_function.py .                                                                                                                                                   0.0s
+ => exporting to image                                                                                                                                                                0.0s
+ => => exporting layers                                                                                                                                                               0.0s
+ => => writing image sha256:88d88947adc9c7c1969e4776d2c6078e367165957ed2742e088549603c3c17e9                                                                                          0.0s
+ => => naming to docker.io/library/km_bees_vs_wasps_v1                                                                                                                                0.0s
+(base) majeedk@tosh:~/Documents/ml.zoom.camp/week09$ 
+
+
+ 
